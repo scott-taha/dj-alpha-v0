@@ -2,7 +2,7 @@ import sharp from "sharp";
 import path from "path";
 import { rename } from "fs/promises";
 
-const logoPath = path.resolve("public/images/alpha-logo.png");
+const logoPath = "/vercel/share/v0-project/public/images/alpha-logo.png";
 const outputPath = logoPath;
 
 async function cropLogo() {
