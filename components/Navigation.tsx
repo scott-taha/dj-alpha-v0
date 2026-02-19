@@ -19,6 +19,7 @@ export default function Navigation() {
     { label: "Gallery", href: "#gallery" },
     { label: "Highlights", href: "#highlights" },
     { label: "Rider", href: "#rider" },
+    { label: "Press Kit", href: "#press" },
   ];
 
   return (
@@ -55,10 +56,10 @@ export default function Navigation() {
             </a>
           ))}
           <a
-            href="#press"
+            href="#book"
             className="px-6 py-2 bg-[#ff0000] text-[#ffffff] text-sm font-mono uppercase tracking-[0.2em] hover:bg-[#cc0000] transition-colors duration-300 pulse-red"
           >
-            Download EPK
+            Book
           </a>
         </div>
 
@@ -107,11 +108,11 @@ export default function Navigation() {
                 </a>
               ))}
               <a
-                href="#press"
+                href="#book"
                 onClick={() => setMenuOpen(false)}
                 className="px-6 py-2 bg-[#ff0000] text-[#ffffff] text-sm font-mono uppercase tracking-[0.2em] hover:bg-[#cc0000] transition-colors duration-300 pulse-red"
               >
-                Download EPK
+                Book
               </a>
             </div>
           </motion.div>

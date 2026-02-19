@@ -4,30 +4,6 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import Image from "next/image";
 
-const VENUES = [
-  {
-    name: "BCKSTG",
-    subtitle: "Minimalist & intimate, it's all about electronic music",
-    label: "& As Residence",
-  },
-  {
-    name: "SUNSET RITUAL",
-    subtitle: "by Le Comptoir Electronik",
-    label: null,
-  },
-  {
-    name: "LOTUS CLUB",
-    subtitle: "Restaurant - Live Show - Club",
-    label: "& As Residence",
-  },
-  {
-    name: "THE CLUB AGADIR",
-    subtitle: "Club Prive",
-    label: "Actual Residency",
-    highlight: true,
-  },
-];
-
 export default function HighlightsSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
@@ -71,48 +47,7 @@ export default function HighlightsSection() {
           />
         </motion.div>
 
-        {/* Venue cards grid */}
-        <div className="grid gap-px bg-[#222222] md:grid-cols-2 lg:grid-cols-4">
-          {VENUES.map((venue, i) => (
-            <motion.div
-              key={venue.name}
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.4 + i * 0.1 }}
-              className={`flex flex-col gap-3 p-8 ${
-                venue.highlight ? "bg-[#ff0000]/10" : "bg-[#0a0a0a]"
-              } hover:bg-[#111111] transition-colors duration-300`}
-            >
-              <h3 className="font-sans text-lg font-bold uppercase tracking-wide text-[#ffffff]">
-                {venue.name}
-              </h3>
-              <p className="font-mono text-xs text-[#888888]">
-                {venue.subtitle}
-              </p>
-              {venue.label && (
-                <span
-                  className={`inline-block self-start px-3 py-1 text-xs font-mono uppercase tracking-[0.15em] ${
-                    venue.highlight
-                      ? "bg-[#ff0000] text-[#ffffff]"
-                      : "border border-[#444444] text-[#888888]"
-                  }`}
-                >
-                  {venue.label}
-                </span>
-              )}
-            </motion.div>
-          ))}
-        </div>
-
-        {/* "And many more" */}
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 1 } : {}}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          className="text-center mt-8 font-mono text-sm uppercase tracking-[0.3em] text-[#888888]"
-        >
-          And many more
-        </motion.p>
+      
       </div>
     </section>
   );

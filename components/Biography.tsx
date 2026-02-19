@@ -35,6 +35,13 @@ export default function Biography() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="lg:w-1/2 flex flex-col gap-6"
           >
+            <Image
+              src="/images/alpha-logo.png"
+              alt="ALPHA Eye of Horus logo"
+              width={80}
+              height={80}
+              className="w-20 h-20 object-contain mb-2"
+            />
             <p className="text-lg md:text-xl leading-relaxed text-[#e0e0e0]">
               ALPHA discovered his passion for music at the age of 18, driven by an
               instinctive pull toward rhythm and sound. What started as bedroom

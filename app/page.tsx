@@ -5,6 +5,7 @@ import Gallery from "@/components/Gallery";
 import HighlightsSection from "@/components/HighlightsSection";
 import TechnicalRider from "@/components/TechnicalRider";
 import PressKitSection from "@/components/PressKitSection";
+import BookingSection from "@/components/BookingSection";
 import Footer from "@/components/Footer";
 
 export default function Page() {
@@ -17,6 +18,7 @@ export default function Page() {
       <HighlightsSection />
       <TechnicalRider />
       <PressKitSection />
+      <BookingSection />
       <Footer />
     </div>
   );

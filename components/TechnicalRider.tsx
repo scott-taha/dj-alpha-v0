@@ -2,7 +2,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Monitor, Coffee, BedDouble } from "lucide-react";
+import { Monitor } from "lucide-react";
 
 const EQUIPMENT = [
   "2x Pioneer CDJ-3000",
@@ -11,21 +11,6 @@ const EQUIPMENT = [
   "1x Pioneer DJM-900NXS2",
   "Professional Monitor System",
   "Booth Monitor (min. 2x JBL PRX or equivalent)",
-];
-
-const REFRESHMENTS = [
-  "1x Bottle of still water (1.5L)",
-  "1x Bottle of sparkling water",
-  "1x Energy drinks (Red Bull / Monster)",
-  "Fresh fruit platter",
-  "Light snacks / sandwiches",
-];
-
-const HOSPITALITY = [
-  "1x Double room at 4-star hotel (minimum)",
-  "Late checkout (2:00 PM)",
-  "Return airport transfers",
-  "Access to venue backstage / green room",
 ];
 
 export default function TechnicalRider() {
@@ -46,12 +31,12 @@ export default function TechnicalRider() {
             004
           </span>
           <h2 className="text-4xl md:text-6xl font-sans font-bold uppercase tracking-tight text-[#ffffff] mt-2">
-            Technical & Hospitality Rider
+            Technical Rider
           </h2>
           <div className="w-16 h-0.5 bg-[#ff0000] mt-4" />
         </motion.div>
 
-        <div className="grid gap-8 md:grid-cols-3">
+        <div className="max-w-xl">
           {/* Equipment */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -69,62 +54,6 @@ export default function TechnicalRider() {
             </div>
             <ul className="flex flex-col gap-3">
               {EQUIPMENT.map((item) => (
-                <li
-                  key={item}
-                  className="flex items-start gap-3 text-sm text-[#e0e0e0]"
-                >
-                  <span className="w-1.5 h-1.5 bg-[#ff0000] mt-1.5 shrink-0" />
-                  <span className="font-mono">{item}</span>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
-
-          {/* Refreshments */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="border border-[#222222] p-8"
-          >
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 border border-[#ff0000] flex items-center justify-center">
-                <Coffee size={18} className="text-[#ff0000]" />
-              </div>
-              <h3 className="font-sans text-lg font-bold uppercase text-[#ffffff]">
-                Refreshments
-              </h3>
-            </div>
-            <ul className="flex flex-col gap-3">
-              {REFRESHMENTS.map((item) => (
-                <li
-                  key={item}
-                  className="flex items-start gap-3 text-sm text-[#e0e0e0]"
-                >
-                  <span className="w-1.5 h-1.5 bg-[#ff0000] mt-1.5 shrink-0" />
-                  <span className="font-mono">{item}</span>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
-
-          {/* Hospitality */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="border border-[#222222] p-8"
-          >
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 border border-[#ff0000] flex items-center justify-center">
-                <BedDouble size={18} className="text-[#ff0000]" />
-              </div>
-              <h3 className="font-sans text-lg font-bold uppercase text-[#ffffff]">
-                Hospitality
-              </h3>
-            </div>
-            <ul className="flex flex-col gap-3">
-              {HOSPITALITY.map((item) => (
                 <li
                   key={item}
                   className="flex items-start gap-3 text-sm text-[#e0e0e0]"

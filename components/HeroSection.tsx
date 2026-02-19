@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+// Image is still used for background
 
 export default function HeroSection() {
   return (
@@ -23,34 +24,19 @@ export default function HeroSection() {
 
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center gap-8 px-6 text-center">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.2, ease: "easeOut" }}
-        >
-          <Image
-            src="/images/alpha-logo.png"
-            alt="ALPHA Eye of Horus logo"
-            width={280}
-            height={280}
-            className="w-48 h-48 md:w-72 md:h-72 object-contain"
-            priority
-          />
-        </motion.div>
-
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
+        <motion.h1
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          className="font-mono text-sm md:text-base uppercase tracking-[0.3em] text-[#888888]"
+          transition={{ duration: 1, ease: "easeOut" }}
+          className="text-6xl md:text-8xl lg:text-9xl font-sans font-bold uppercase tracking-tight text-[#ffffff]"
         >
-          DJ / Producer
-        </motion.p>
+          ALPHA
+        </motion.h1>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1.2 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
           className="flex gap-6"
         >
           <a
@@ -60,10 +46,10 @@ export default function HeroSection() {
             Explore
           </a>
           <a
-            href="#press"
+            href="#book"
             className="px-8 py-3 bg-[#ff0000] text-[#ffffff] font-mono text-sm uppercase tracking-[0.15em] hover:bg-[#cc0000] transition-all duration-300 pulse-red"
           >
-            Press Kit
+            Book
           </a>
         </motion.div>
       </div>

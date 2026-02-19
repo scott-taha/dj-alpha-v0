@@ -19,6 +19,7 @@ const NAV_LINKS = [
   { label: "Highlights", href: "#highlights" },
   { label: "Rider", href: "#rider" },
   { label: "Press Kit", href: "#press" },
+  { label: "Book", href: "#book" },
 ];
 
 export default function Footer() {
