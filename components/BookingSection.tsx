@@ -34,13 +34,15 @@ export default function BookingSection() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="flex justify-center mb-12"
         >
-          <Image
-            src="/images/alpha-logo.png"
-            alt="ALPHA Eye of Horus logo"
-            width={120}
-            height={120}
-            className="w-24 h-24 md:w-28 md:h-28 object-contain"
-          />
+          <div className="w-24 h-[5.4rem] md:w-28 md:h-[6.3rem] overflow-hidden">
+            <Image
+              src="/images/alpha-logo.png"
+              alt="ALPHA Eye of Horus logo"
+              width={120}
+              height={120}
+              className="w-24 h-24 md:w-28 md:h-28 object-contain object-top"
+            />
+          </div>
         </motion.div>
 
         {/* Booking form via formsubmit.co */}

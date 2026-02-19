@@ -47,7 +47,9 @@ export default function PressKitSection() {
 
             {/* Big Download EPK button */}
             <a
-              href="#"
+              href="https://www.dropbox.com/scl/fo/40o36ouc4f0gi6v9rbjf6/AFMG9g0kvTI6AhA0cADjpus/ALPHA_PRESS%20KIT%20.pdf?rlkey=j10d7108b90nrohanir3swt8y&st=wpmhm9fw&dl=0"
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center justify-center gap-3 px-10 py-5 bg-[#ff0000] text-[#ffffff] font-mono text-base uppercase tracking-[0.2em] hover:bg-[#cc0000] transition-all duration-300 pulse-red"
             >
               <Download size={20} />

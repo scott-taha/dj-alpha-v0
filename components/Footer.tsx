@@ -17,8 +17,6 @@ const NAV_LINKS = [
   { label: "About", href: "#about" },
   { label: "Gallery", href: "#gallery" },
   { label: "Highlights", href: "#highlights" },
-  { label: "Rider", href: "#rider" },
-  { label: "Press Kit", href: "#press" },
   { label: "Book", href: "#book" },
 ];
 
@@ -29,13 +27,15 @@ export default function Footer() {
         <div className="grid gap-12 md:grid-cols-3">
           {/* Brand */}
           <div className="flex flex-col gap-4">
-            <Image
-              src="/images/alpha-logo.png"
-              alt="ALPHA logo"
-              width={60}
-              height={60}
-              className="w-14 h-14 object-contain"
-            />
+            <div className="w-14 h-[3.15rem] overflow-hidden">
+              <Image
+                src="/images/alpha-logo.png"
+                alt="ALPHA logo"
+                width={60}
+                height={60}
+                className="w-14 h-14 object-contain object-top"
+              />
+            </div>
             <p className="text-sm leading-relaxed text-[#888888]">
               DJ & Producer. Crafting immersive sonic experiences from Morocco
               to the world.
@@ -89,7 +89,7 @@ export default function Footer() {
             &copy; 2026 ALPHA. All rights reserved.
           </span>
           <span className="text-xs text-[#888888]">
-            Electronic Press Kit
+            DJ &amp; Producer
           </span>
         </div>
       </div>
