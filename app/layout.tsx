@@ -7,8 +7,8 @@ const _inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const _spaceGrotesk = Space_Grotesk({ subsets: ["latin"], variable: "--font-space-grotesk" });
 
 export const metadata: Metadata = {
-  title: 'NOVA | DJ & Producer',
-  description: 'International DJ and producer. Residencies, press, and booking.',
+  title: 'ALPHA | DJ & Producer',
+  description: 'ALPHA - International DJ and producer. Electronic Press Kit, residencies, and booking.',
   generator: 'v0.app',
   icons: {
     icon: [

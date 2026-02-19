@@ -1,53 +1,22 @@
-"use client";
-
-import { useState } from "react";
-import { IntroSequence } from "@/components/IntroSequence";
-import { Navigation } from "@/components/Navigation";
-import { VenueGallery } from "@/components/VenueGallery";
-import { AboutSection } from "@/components/AboutSection";
-import { HighlightsSection } from "@/components/HighlightsSection";
-import { PressKitSection } from "@/components/PressKitSection";
-import { BookingPage } from "@/components/BookingPage";
-import { Footer } from "@/components/Footer";
+import Navigation from "@/components/Navigation";
+import HeroSection from "@/components/HeroSection";
+import Biography from "@/components/Biography";
+import Gallery from "@/components/Gallery";
+import HighlightsSection from "@/components/HighlightsSection";
+import TechnicalRider from "@/components/TechnicalRider";
+import PressKitSection from "@/components/PressKitSection";
+import Footer from "@/components/Footer";
 
 export default function Page() {
-  const [introComplete, setIntroComplete] = useState(false);
-  const [showBooking, setShowBooking] = useState(false);
-
-  if (showBooking) {
-    return <BookingPage onBack={() => setShowBooking(false)} />;
-  }
-
   return (
-    <div className="min-h-screen bg-background">
-      {/* Navigation - Shows after intro */}
-      <Navigation showNav={introComplete} />
-
-      {/* Intro Animation Sequence */}
-      <section id="home">
-        <IntroSequence
-          onComplete={() => setIntroComplete(true)}
-          onBooking={() => setShowBooking(true)}
-        />
-      </section>
-
-      {/* About & Gallery Section */}
-      <section id="gallery">
-        <AboutSection />
-      </section>
-
-      {/* Highlights Section */}
+    <div className="min-h-screen bg-[#000000] grain-overlay">
+      <Navigation />
+      <HeroSection />
+      <Biography />
+      <Gallery />
       <HighlightsSection />
-
-      {/* Residency & Legacy Gallery */}
-      <section id="residencies">
-        <VenueGallery />
-      </section>
-
-      {/* Press Kit Section */}
+      <TechnicalRider />
       <PressKitSection />
-
-      {/* Footer */}
       <Footer />
     </div>
   );

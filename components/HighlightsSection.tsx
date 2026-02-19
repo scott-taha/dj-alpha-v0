@@ -1,105 +1,118 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import { Play, Music, Award, Disc3 } from "lucide-react";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
+import Image from "next/image";
 
-const HIGHLIGHTS = [
+const VENUES = [
   {
-    icon: Play,
-    title: "Tomorrowland 2025",
-    subtitle: "Mainstage Headline",
-    description:
-      "Closed out the legendary Mainstage to a crowd of 80,000 with a 2-hour set that trended worldwide.",
+    name: "BCKSTG",
+    subtitle: "Minimalist & intimate, it's all about electronic music",
+    label: "& As Residence",
   },
   {
-    icon: Music,
-    title: "Echoes LP",
-    subtitle: "Debut Album Release",
-    description:
-      "12-track album blending deep house and Afrobeat, featuring collaborations with Grammy-winning vocalists.",
+    name: "SUNSET RITUAL",
+    subtitle: "by Le Comptoir Electronik",
+    label: null,
   },
   {
-    icon: Award,
-    title: "DJ Mag Top 20",
-    subtitle: "2024 Rankings",
-    description:
-      "Ranked #17 in the annual DJ Mag Top 100 poll, rising 40 spots from the previous year.",
+    name: "LOTUS CLUB",
+    subtitle: "Restaurant - Live Show - Club",
+    label: "& As Residence",
   },
   {
-    icon: Disc3,
-    title: "Boiler Room Berlin",
-    subtitle: "Live Set",
-    description:
-      "A 90-minute vinyl-only set that amassed over 5 million views and became one of the platform's top streams.",
+    name: "THE CLUB AGADIR",
+    subtitle: "Club Prive",
+    label: "Actual Residency",
+    highlight: true,
   },
 ];
 
-export function HighlightsSection() {
-  const ref = useRef<HTMLDivElement>(null);
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) setVisible(true);
-      },
-      { threshold: 0.15 }
-    );
-    if (ref.current) observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, []);
+export default function HighlightsSection() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section ref={ref} id="highlights" className="py-24 md:py-32 bg-secondary/50">
-      <div className="mx-auto max-w-7xl px-6">
-        {/* Header */}
-        <div
-          className={`mb-16 flex flex-col gap-4 text-center transition-all duration-1000 ${
-            visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}
+    <section
+      id="highlights"
+      className="py-24 md:py-32 bg-[#0a0a0a]"
+      ref={ref}
+    >
+      <div className="max-w-7xl mx-auto px-6">
+        {/* Section label */}
+        <motion.div
+          initial={{ opacity: 0, x: -40 }}
+          animate={isInView ? { opacity: 1, x: 0 } : {}}
+          transition={{ duration: 0.6 }}
+          className="mb-16"
         >
-          <span className="font-sans text-xs tracking-[0.3em] uppercase text-primary">
-            Career Highlights
+          <span className="font-mono text-xs uppercase tracking-[0.3em] text-[#ff0000]">
+            003
           </span>
-          <h2 className="font-mono text-3xl font-bold tracking-tight text-foreground md:text-5xl text-balance">
-            Defining Moments
+          <h2 className="text-4xl md:text-6xl font-sans font-bold uppercase tracking-tight text-[#ffffff] mt-2">
+            Residencies & Highlights
           </h2>
+          <div className="w-16 h-0.5 bg-[#ff0000] mt-4" />
+        </motion.div>
+
+        {/* Venue logos image */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="mb-16 relative w-full overflow-hidden border border-[#222222] bg-[#ffffff]"
+        >
+          <Image
+            src="/images/venue-logos.png"
+            alt="Performed at: BCKSTG, Sunset Ritual, Lotus Club, The Club Agadir, and many more"
+            width={1600}
+            height={400}
+            className="w-full h-auto object-contain"
+          />
+        </motion.div>
+
+        {/* Venue cards grid */}
+        <div className="grid gap-px bg-[#222222] md:grid-cols-2 lg:grid-cols-4">
+          {VENUES.map((venue, i) => (
+            <motion.div
+              key={venue.name}
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.4 + i * 0.1 }}
+              className={`flex flex-col gap-3 p-8 ${
+                venue.highlight ? "bg-[#ff0000]/10" : "bg-[#0a0a0a]"
+              } hover:bg-[#111111] transition-colors duration-300`}
+            >
+              <h3 className="font-sans text-lg font-bold uppercase tracking-wide text-[#ffffff]">
+                {venue.name}
+              </h3>
+              <p className="font-mono text-xs text-[#888888]">
+                {venue.subtitle}
+              </p>
+              {venue.label && (
+                <span
+                  className={`inline-block self-start px-3 py-1 text-xs font-mono uppercase tracking-[0.15em] ${
+                    venue.highlight
+                      ? "bg-[#ff0000] text-[#ffffff]"
+                      : "border border-[#444444] text-[#888888]"
+                  }`}
+                >
+                  {venue.label}
+                </span>
+              )}
+            </motion.div>
+          ))}
         </div>
 
-        {/* Highlights Grid */}
-        <div className="grid gap-px bg-border md:grid-cols-2">
-          {HIGHLIGHTS.map((item, i) => {
-            const Icon = item.icon;
-            return (
-              <div
-                key={item.title}
-                className={`group flex flex-col gap-4 bg-background p-8 transition-all duration-700 hover:bg-secondary/80 md:p-12 ${
-                  visible
-                    ? "opacity-100 translate-y-0"
-                    : "opacity-0 translate-y-8"
-                }`}
-                style={{ transitionDelay: `${200 + i * 150}ms` }}
-              >
-                <div className="flex items-center gap-4">
-                  <div className="flex h-10 w-10 items-center justify-center border border-primary text-primary">
-                    <Icon size={18} />
-                  </div>
-                  <div>
-                    <h3 className="font-mono text-base font-bold text-foreground">
-                      {item.title}
-                    </h3>
-                    <span className="font-sans text-xs tracking-wider uppercase text-primary">
-                      {item.subtitle}
-                    </span>
-                  </div>
-                </div>
-                <p className="font-sans text-sm leading-relaxed text-muted-foreground">
-                  {item.description}
-                </p>
-              </div>
-            );
-          })}
-        </div>
+        {/* "And many more" */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 1 } : {}}
+          transition={{ duration: 0.8, delay: 0.8 }}
+          className="text-center mt-8 font-mono text-sm uppercase tracking-[0.3em] text-[#888888]"
+        >
+          And many more
+        </motion.p>
       </div>
     </section>
   );
