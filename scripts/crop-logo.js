@@ -1,8 +1,9 @@
 import sharp from "sharp";
 import path from "path";
+import { rename } from "fs/promises";
 
 const logoPath = path.resolve("public/images/alpha-logo.png");
-const outputPath = logoPath; // overwrite in place
+const outputPath = logoPath;
 
 async function cropLogo() {
   const metadata = await sharp(logoPath).metadata();
@@ -17,8 +18,7 @@ async function cropLogo() {
     .toFile(outputPath + ".tmp");
 
   // Replace original
-  const fs = await import("fs/promises");
-  await fs.rename(outputPath + ".tmp", outputPath);
+  await rename(outputPath + ".tmp", outputPath);
 
   console.log(`Cropped to: ${width}x${cropHeight}`);
   console.log("Logo saved successfully.");
