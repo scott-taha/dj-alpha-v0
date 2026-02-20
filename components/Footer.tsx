@@ -3,14 +3,31 @@
 import Image from "next/image";
 
 const SOCIAL_LINKS = [
+
   {
+
     label: "Instagram",
+
     href: "https://www.instagram.com/alphaaadj?igsh=M2Y4ZDV5dW1iNHc=",
+
   },
+
   {
+
     label: "SoundCloud",
+
     href: "https://soundcloud.com/ilyas-lamkouki",
+
   },
+
+  {
+
+    label: "Email",
+
+    href: "mailto:alphadj210@gmail.com",
+
+  },
+
 ];
 
 const NAV_LINKS = [
