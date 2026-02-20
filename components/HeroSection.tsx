@@ -11,13 +11,14 @@ export default function HeroSection() {
     >
       {/* Background image */}
       <div className="absolute inset-0">
-        <Image
-          src="/images/hero-crouch.jpg"
-          alt="ALPHA crouching portrait"
-          fill
-          className="object-cover object-top grayscale"
-          priority
-        />
+          <Image
+            src="/images/hero-crouch.jpg"
+            alt="ALPHA crouching portrait"
+            fill
+            sizes="100vw"
+            className="object-cover object-top grayscale"
+            priority
+          />
         <div className="absolute inset-0 bg-[#000000]/60" />
       </div>
 

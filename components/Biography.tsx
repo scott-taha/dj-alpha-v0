@@ -94,6 +94,7 @@ export default function Biography() {
                 src="/images/red-portrait.jpg"
                 alt="ALPHA with headphones in red lighting"
                 fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
               />
               <div className="absolute inset-0 bg-[#ff0000]/10 mix-blend-multiply" />
