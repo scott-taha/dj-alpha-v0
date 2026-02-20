@@ -18,8 +18,6 @@ export default function Navigation() {
     { label: "About", href: "#about" },
     { label: "Gallery", href: "#gallery" },
     { label: "Highlights", href: "#highlights" },
-    { label: "Rider", href: "#rider" },
-    { label: "Press Kit", href: "#press" },
   ];
 
   return (
@@ -35,13 +33,15 @@ export default function Navigation() {
     >
       <nav className="flex items-center justify-between px-6 py-4 max-w-7xl mx-auto">
         <a href="#hero" className="flex items-center gap-3">
-          <Image
-            src="/images/alpha-logo.png"
-            alt="ALPHA logo"
-            width={40}
-            height={40}
-            className="w-10 h-10 object-contain"
-          />
+          <div className="w-10 h-9 overflow-hidden">
+            <Image
+              src="/images/alpha-logo.png"
+              alt="ALPHA logo"
+              width={40}
+              height={40}
+              className="w-10 h-10 object-contain object-top"
+            />
+          </div>
         </a>
 
         {/* Desktop nav */}

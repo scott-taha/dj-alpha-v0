@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
+import { motion, useInView } from "motion/react";
 import { useRef } from "react";
 import { Download } from "lucide-react";
 import Image from "next/image";
@@ -36,18 +36,22 @@ export default function PressKitSection() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="lg:w-1/2 flex flex-col gap-8"
           >
-            <div className="relative aspect-[4/3] overflow-hidden">
+            <div className="relative aspect-[3/4] overflow-hidden">
               <Image
-                src="/images/spotlight-portrait.jpg"
-                alt="ALPHA press photo"
+                src="/images/press-portrait.png"
+                alt="ALPHA profile portrait with red atmospheric lighting"
                 fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
+                priority
               />
             </div>
 
             {/* Big Download EPK button */}
             <a
-              href="#"
+              href="https://www.dropbox.com/scl/fo/40o36ouc4f0gi6v9rbjf6/AFMG9g0kvTI6AhA0cADjpus/ALPHA_PRESS%20KIT%20.pdf?rlkey=j10d7108b90nrohanir3swt8y&st=wpmhm9fw&dl=0"
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center justify-center gap-3 px-10 py-5 bg-[#ff0000] text-[#ffffff] font-mono text-base uppercase tracking-[0.2em] hover:bg-[#cc0000] transition-all duration-300 pulse-red"
             >
               <Download size={20} />
@@ -119,7 +123,6 @@ export default function PressKitSection() {
                   "Artist Biography (PDF)",
                   "High-Res Press Photos (ZIP)",
                   "Technical Rider (PDF)",
-                  "Logo Pack (ZIP)",
                 ].map((item) => (
                   <a
                     key={item}

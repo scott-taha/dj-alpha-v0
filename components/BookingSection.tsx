@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
+import { motion, useInView } from "motion/react";
 import { useRef } from "react";
 import Image from "next/image";
 
@@ -34,13 +34,15 @@ export default function BookingSection() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="flex justify-center mb-12"
         >
-          <Image
-            src="/images/alpha-logo.png"
-            alt="ALPHA Eye of Horus logo"
-            width={120}
-            height={120}
-            className="w-24 h-24 md:w-28 md:h-28 object-contain"
-          />
+          <div className="w-24 h-[5.4rem] md:w-28 md:h-[6.3rem] overflow-hidden">
+            <Image
+              src="/images/alpha-logo.png"
+              alt="ALPHA Eye of Horus logo"
+              width={120}
+              height={120}
+              className="w-24 h-24 md:w-28 md:h-28 object-contain object-top"
+            />
+          </div>
         </motion.div>
 
         {/* Booking form via formsubmit.co */}
@@ -106,6 +108,28 @@ export default function BookingSection() {
                 required
                 className="w-full bg-[#0a0a0a] border border-[#222222] px-4 py-3 text-sm text-[#ffffff] font-mono focus:outline-none focus:border-[#ff0000] transition-colors duration-300 [color-scheme:dark]"
               />
+            </div>
+
+            <div className="flex flex-col gap-2 flex-1">
+              <label
+                htmlFor="event-type"
+                className="font-mono text-xs uppercase tracking-[0.2em] text-[#888888]"
+              >
+                Event Type
+              </label>
+              <select
+                id="event-type"
+                name="event_type"
+                required
+                className="w-full bg-[#0a0a0a] border border-[#222222] px-4 py-3 text-sm text-[#ffffff] font-mono focus:outline-none focus:border-[#ff0000] transition-colors duration-300 [color-scheme:dark] appearance-none"
+                defaultValue=""
+              >
+                <option value="" disabled className="text-[#444444]">Select type</option>
+                <option value="club">Club</option>
+                <option value="festival">Festival</option>
+                <option value="private">Private</option>
+                <option value="other">Other</option>
+              </select>
             </div>
 
             <div className="flex flex-col gap-2 flex-1">

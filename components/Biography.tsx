@@ -35,13 +35,15 @@ export default function Biography() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="lg:w-1/2 flex flex-col gap-6"
           >
-            <Image
-              src="/images/alpha-logo.png"
-              alt="ALPHA Eye of Horus logo"
-              width={80}
-              height={80}
-              className="w-20 h-20 object-contain mb-2"
-            />
+            <div className="w-20 h-[4.5rem] overflow-hidden mb-2">
+              <Image
+                src="/images/alpha-logo.png"
+                alt="ALPHA Eye of Horus logo"
+                width={80}
+                height={80}
+                className="w-20 h-20 object-contain object-top"
+              />
+            </div>
             <p className="text-lg md:text-xl leading-relaxed text-[#e0e0e0]">
               ALPHA discovered his passion for music at the age of 18, driven by an
               instinctive pull toward rhythm and sound. What started as bedroom
@@ -89,12 +91,12 @@ export default function Biography() {
           >
             <div className="relative aspect-[3/4] overflow-hidden">
               <Image
-                src="/images/red-portrait.jpg"
-                alt="ALPHA with headphones in red lighting"
+                src="/images/bio-spotlight.png"
+                alt="ALPHA black and white portrait with spotlight and shadow silhouette"
                 fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
               />
-              <div className="absolute inset-0 bg-[#ff0000]/10 mix-blend-multiply" />
             </div>
             {/* Offset border accent */}
             <div className="absolute -bottom-4 -right-4 w-full h-full border border-[#ff0000]/30 -z-10" />

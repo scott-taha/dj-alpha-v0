@@ -26,14 +26,14 @@ const GALLERY_IMAGES = [
     aspect: "aspect-[3/4]",
   },
   {
-    src: "/images/spotlight-portrait.jpg",
-    alt: "ALPHA portrait with spotlight",
+    src: "/images/golden-portrait.png",
+    alt: "ALPHA portrait with sunglasses in golden lighting",
     aspect: "aspect-[4/5]",
   },
   {
-    src: "/images/red-portrait.jpg",
-    alt: "ALPHA close-up with headphones in red light",
-    aspect: "aspect-[3/4]",
+    src: "/images/red-backlight-portrait.png",
+    alt: "ALPHA portrait with red backlighting and shadow silhouette",
+    aspect: "aspect-[4/5]",
   },
 ];
 
@@ -75,7 +75,9 @@ export default function Gallery() {
                   src={image.src}
                   alt={image.alt}
                   fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   className="object-cover transition-transform duration-700 group-hover:scale-105 grayscale group-hover:grayscale-0"
+                  {...(i === 0 && { priority: true })}
                 />
                 <div className="absolute inset-0 bg-[#ff0000]/0 group-hover:bg-[#ff0000]/10 transition-colors duration-500" />
               </div>
