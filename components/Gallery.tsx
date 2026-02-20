@@ -30,6 +30,16 @@ const GALLERY_IMAGES = [
     alt: "ALPHA portrait with spotlight",
     aspect: "aspect-[4/5]",
   },
+  {
+    src: "/images/golden-portrait.png",
+    alt: "ALPHA portrait with sunglasses in golden lighting",
+    aspect: "aspect-[4/5]",
+  },
+  {
+    src: "/images/dj-live-set.jpeg",
+    alt: "ALPHA performing a live DJ set under orange and purple club lights",
+    aspect: "aspect-[3/4]",
+  },
 ];
 
 export default function Gallery() {
