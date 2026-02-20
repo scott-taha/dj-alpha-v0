@@ -72,6 +72,7 @@ export default function Gallery() {
                   fill
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   className="object-cover transition-transform duration-700 group-hover:scale-105 grayscale group-hover:grayscale-0"
+                  {...(i === 0 && { priority: true })}
                 />
                 <div className="absolute inset-0 bg-[#ff0000]/0 group-hover:bg-[#ff0000]/10 transition-colors duration-500" />
               </div>
