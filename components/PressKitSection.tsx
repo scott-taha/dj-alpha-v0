@@ -36,12 +36,14 @@ export default function PressKitSection() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="lg:w-1/2 flex flex-col gap-8"
           >
-            <div className="relative aspect-[4/3] overflow-hidden">
+            <div className="relative aspect-[3/4] overflow-hidden">
               <Image
-                src="/images/spotlight-portrait.jpg"
-                alt="ALPHA press photo"
+                src="/images/press-portrait.png"
+                alt="ALPHA profile portrait with red atmospheric lighting"
                 fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
+                priority
               />
             </div>
 

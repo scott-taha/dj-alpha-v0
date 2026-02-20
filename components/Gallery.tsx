@@ -30,11 +30,6 @@ const GALLERY_IMAGES = [
     alt: "ALPHA portrait with spotlight",
     aspect: "aspect-[4/5]",
   },
-  {
-    src: "/images/red-portrait.jpg",
-    alt: "ALPHA close-up with headphones in red light",
-    aspect: "aspect-[3/4]",
-  },
 ];
 
 export default function Gallery() {
@@ -75,6 +70,7 @@ export default function Gallery() {
                   src={image.src}
                   alt={image.alt}
                   fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   className="object-cover transition-transform duration-700 group-hover:scale-105 grayscale group-hover:grayscale-0"
                 />
                 <div className="absolute inset-0 bg-[#ff0000]/0 group-hover:bg-[#ff0000]/10 transition-colors duration-500" />
