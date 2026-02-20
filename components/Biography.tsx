@@ -91,13 +91,12 @@ export default function Biography() {
           >
             <div className="relative aspect-[3/4] overflow-hidden">
               <Image
-                src="/images/red-portrait.jpg"
-                alt="ALPHA with headphones in red lighting"
+                src="/images/bio-spotlight.png"
+                alt="ALPHA black and white portrait with spotlight and shadow silhouette"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
               />
-              <div className="absolute inset-0 bg-[#ff0000]/10 mix-blend-multiply" />
             </div>
             {/* Offset border accent */}
             <div className="absolute -bottom-4 -right-4 w-full h-full border border-[#ff0000]/30 -z-10" />
