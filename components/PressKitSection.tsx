@@ -123,7 +123,6 @@ export default function PressKitSection() {
                   "Artist Biography (PDF)",
                   "High-Res Press Photos (ZIP)",
                   "Technical Rider (PDF)",
-                  "Logo Pack (ZIP)",
                 ].map((item) => (
                   <a
                     key={item}

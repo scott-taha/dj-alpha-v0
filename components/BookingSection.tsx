@@ -112,6 +112,28 @@ export default function BookingSection() {
 
             <div className="flex flex-col gap-2 flex-1">
               <label
+                htmlFor="event-type"
+                className="font-mono text-xs uppercase tracking-[0.2em] text-[#888888]"
+              >
+                Event Type
+              </label>
+              <select
+                id="event-type"
+                name="event_type"
+                required
+                className="w-full bg-[#0a0a0a] border border-[#222222] px-4 py-3 text-sm text-[#ffffff] font-mono focus:outline-none focus:border-[#ff0000] transition-colors duration-300 [color-scheme:dark] appearance-none"
+                defaultValue=""
+              >
+                <option value="" disabled className="text-[#444444]">Select type</option>
+                <option value="club">Club</option>
+                <option value="festival">Festival</option>
+                <option value="private">Private</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <div className="flex flex-col gap-2 flex-1">
+              <label
                 htmlFor="location"
                 className="font-mono text-xs uppercase tracking-[0.2em] text-[#888888]"
               >

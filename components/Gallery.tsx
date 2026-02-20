@@ -30,6 +30,11 @@ const GALLERY_IMAGES = [
     alt: "ALPHA portrait with sunglasses in golden lighting",
     aspect: "aspect-[4/5]",
   },
+  {
+    src: "/images/red-backlight-portrait.png",
+    alt: "ALPHA portrait with red backlighting and shadow silhouette",
+    aspect: "aspect-[4/5]",
+  },
 ];
 
 export default function Gallery() {
