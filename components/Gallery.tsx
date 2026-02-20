@@ -26,11 +26,6 @@ const GALLERY_IMAGES = [
     aspect: "aspect-[3/4]",
   },
   {
-    src: "/images/spotlight-portrait.jpg",
-    alt: "ALPHA portrait with spotlight",
-    aspect: "aspect-[4/5]",
-  },
-  {
     src: "/images/golden-portrait.png",
     alt: "ALPHA portrait with sunglasses in golden lighting",
     aspect: "aspect-[4/5]",
