@@ -84,18 +84,23 @@ export default function Footer() {
               Connect
             </span>
             <ul className="flex flex-col gap-2">
-              {SOCIAL_LINKS.map((link) => (
-                <li key={link.label}>
-                  <a
-                    href={link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sm text-[#888888] hover:text-[#ffffff] transition-colors duration-300"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
+              {SOCIAL_LINKS.map((link) => {
+                const isExternal = link.href.startsWith("http");
+                return (
+                  <li key={link.label}>
+                    <a
+                      href={link.href}
+                      {...(isExternal && {
+                        target: "_blank",
+                        rel: "noopener noreferrer",
+                      })}
+                      className="text-sm text-[#888888] hover:text-[#ffffff] transition-colors duration-300"
+                    >
+                      {link.label}
+                    </a>
+                  </li>
+                );
+              })}
             </ul>
           </div>
         </div>
